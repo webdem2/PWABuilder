@@ -5,6 +5,11 @@ const PRECACHE_ASSETS = [
     '/assets/',
     '/src/'
 ]
+<script>
+  if (typeof navigator.serviceWorker !== 'undefined') {
+    navigator.serviceWorker.register('sw.js')
+  }
+</script>
 
 // Listener for the install event - precaches our assets list on service worker install.
 self.addEventListener('install', event => {
